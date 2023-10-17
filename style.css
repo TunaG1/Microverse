@@ -1,0 +1,1025 @@
+:root {
+    --nav-icon-mobile: #6070FF;
+    --header-text-color: #344563;
+    --links-color: #7F8CFF;
+    --icon-hover: #a6c1f84f;
+    --neutral-gray: #C1C7D0;
+    --neutral-gray-2: #172B4D;
+    --neutral-gray-3: #7A869A;
+    --neutral-gray-4: #C1C7D0;
+    --tag-bg: #EBEBFF;
+    --post-btn-border:#396DF2;
+    --post-border: #DFE1E6;
+    --languages-color: #F7F7F9;
+    --text-color-2:#EBEBFF;
+    --highq-h1: #091E42;
+
+
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Body Blur */
+
+.body-bg-blur {
+    background-image: url(/img/1920x1080-true-blue-solid-color-background.jpg);
+    filter: blur(5px);
+    -webkit-filter: blur(8px);
+
+}
+
+/* Container */
+/* Mobile First <720px*/
+
+
+
+.container {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    margin: 24px;
+    position: relative;
+}
+
+/* Section Header */
+
+.header-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        'nav'
+        'head'
+    ;
+    /* height: 100vh; */
+    background-image: url(./img/header-shapes\ mobile@2x.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mobile Settings*/
+
+.mobile-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: inherit;
+    z-index: 10000000;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #Fff;
+    display: none;
+    animation: fade-fancy .4s 1  ;
+}
+
+.mobile-menu-item {
+    background: #3c4fffee;
+    width: 100%;
+    height: 100%;
+    padding: 120px 40px;
+}
+
+.mobile-menu-item a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+
+}
+
+/* NAVIGATION BAR */
+
+/* Hiding Desktop navbar */
+.nav-full {
+    display: none;
+}
+
+.nav-bar {
+    font-size: 18px;
+    color: var(--nav-icon-mobile);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: nav;
+
+}
+
+.nav-bar-logo h5 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    z-index: 10000;
+    padding: 10px 12px;
+}
+
+
+/* NAV BAR - MOBILE */
+/* Nav Mobile Icon */
+.nav-mobile-button {
+    position: relative;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.nav-mobile-button::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: var(--icon-hover);
+    border-radius: 50%;
+    width: 0;
+    height: 45px;
+    
+}
+
+.nav-mobile-button:hover::after {
+    width: 45px;
+}
+
+
+.nav-mob-line::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: var(--neutral-gray-2);
+    display: block;
+    margin-bottom: 5px;
+    z-index: 10000;
+}
+
+
+/* Rotation animation */
+
+.rotate {
+    animation-name: rotate-default;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: 2;
+    animation-duration: .7s;
+}
+
+@keyframes rotate-default {
+    from {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-30deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes fade-fancy {
+    0% {
+        top: 0;
+        left: 0;
+      }
+      
+      90% {
+        left:-20px
+      }
+      100% {
+        top: 0;
+        left: 0px;
+      }
+    
+}
+
+/* HEADLINE, TEXT AND HEADER SOCIAL ICONS */
+
+.headline-header {
+    max-width: 327px;
+    color: var(--header-text-color);
+    line-height: 24px;
+    margin-top: 30px;
+}
+
+/* Headline */
+.headline-header h1 {
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Header Text */
+.headline-header p {
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.headline-header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+    color: var(--links-color);
+    max-width: fit-content;
+    font-weight: 500;
+}
+
+.headline-header a::after {
+    content: '';
+    display: block;
+    background: var(--links-color);
+    width: 0;
+    height: 1px;
+}
+
+.headline-header a:hover::after {
+    width: 100%;
+}
+
+
+/* Header icons */
+.header-social > * {
+    margin-right: 19px;
+}
+
+/* ************************ */
+/* POSTS SECTION*/
+/* ************************* */
+
+.posts-section {
+    margin-top: 88px;
+    position: relative;
+}
+
+
+.post {
+    display: grid;
+    margin-bottom: 88px;
+    border-radius: 16px;
+    border: 1px solid var(--post-border);
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        'post-img'
+        'post-detail'
+    ;
+    padding: 16px;
+}
+
+/* POSTS Hover */
+
+.post-1 {
+    display: block;
+}
+
+.post-1:hover {
+    transform: translateY(2px);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px var(--links-color);
+}
+
+#post-two:hover {
+    transform: translateY(2px);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px var(--links-color);
+}
+#post-three:hover {
+    transform: translateY(2px);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px var(--links-color);
+}
+#post-four:hover {
+    transform: translateY(2px);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px var(--links-color);
+}
+
+/* POST IMG */
+
+.post-img-cont-full {
+    display: none;
+}
+
+.post-img-cont {
+  max-width: 375px;
+}
+
+.post-img {
+    width: calc((100vw - 117px));
+    height: calc((188px + 16vw) - 16px);
+    object-fit:cover;
+
+}
+
+
+/* POST DETAIL */
+
+.post-detail {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.post-detail h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--neutral-gray-2);
+}
+
+
+/* POST Detail HEAD */
+.post-detail-head {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    /* width: 100%; */
+    grid-column: 1 /  span 2;
+}
+
+.post-detail-head{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.post-detail-head aside:not(:first-child) {
+    color: var(--neutral-gray-3);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    text-transform: capitalize;
+}
+
+.post-detail-head span {
+    color: var(--neutral-gray-2);
+}
+
+.post-detail-head span::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background:var(--neutral-gray-4);
+    border-radius: 50%;
+}
+
+/* Post DETAIL TEXT */
+
+.post-detail-text {
+    grid-column: 1 / -1;
+}
+.post-detail-text p {
+    color: var(--header-text-color);
+    line-height: 24px;
+    font-size: 15px;
+    font-weight: 400;
+    /* min-width: 295px; This causing word break issues */
+}
+
+/* Post Tags */
+
+.post-tags span {
+    padding: 4px 12px;
+    margin-right: 8px;
+    border-radius: 10px;
+    background-color: var(--tag-bg);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 3%;
+    color: var(--nav-icon-mobile);
+}
+
+/* POST BUTTON */
+/* This is for Mobile mode only */
+.post-btn {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 3%;
+    max-width: max-content;
+    grid-column: 1 / span 2;
+}
+
+.post-btnEl {
+    border-radius: 10px;
+    margin-top: 24px;
+    cursor: pointer;
+    padding: 12px;
+    border: 1px solid var(--post-btn-border);
+    color: var(--post-btn-border);
+    background: transparent;
+}
+
+/* Post-Expand - Mobile */
+
+/* POST 1 EXPAND */
+.post-expand {
+    padding: 24px;
+    margin: 60px 20px 50px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 1px 1px 12px #000000be;
+    transition: .3s ease-in-out;
+    background-color: #fff;
+    /* background-color: rgba(0,0,0, 0.4); */
+    color: var(--header-text-color);
+    overflow: hidden;
+    display: none;
+    transition: 0.5s ease-in-out all;
+    top: 400px;
+    left: 0;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    line-height: 24px;
+
+}
+
+/* POST 2 EXPAND */
+
+#post-2-expand {
+    display: none;
+    top: 1250px;
+}
+
+/* POST 3 EXPAND */
+
+#post-3-expand {
+    display: none;
+    /* position: absolute; */
+    top: 2000px;
+}
+
+/* POST 4 EXPAND */
+
+#post-4-expand {
+    display: none;
+    /* position: absolute; */
+    top: 2700px;
+}
+
+@keyframes post-anime {
+    0% {
+        width: 0;
+        height: 0;
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        width: 100%;
+        transform: rotate(3deg);
+    }
+
+    100% {
+        width: 100%;
+    }
+    
+}
+
+.post-detail-expand {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-detail > .post-expand-detail-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.post-expand-detail-title h2 {
+    margin-top: 0;
+}
+
+/* Temporary */
+.post-expand-detail-title p {
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.post-detail-text-expand {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 0.2em;
+    margin-bottom: 20px;
+
+}
+
+.post-detail-text-expand-1020 {
+    display: none;
+}
+
+.post-detail-text-expand p {
+    min-width:auto;
+}
+
+.post-detail-head-expand {
+    margin-bottom: 10px;
+}
+
+.post-btn-expand {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.post-btn-expand button {
+    width: calc(375px / 3);
+    margin: 0 10px;
+}
+
+.post-btnEl-expand {
+    background-color: var(--nav-icon-mobile);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 18px;
+}
+/* Icon - xmark */
+
+.fa-xmark {
+    cursor: pointer;
+    margin-top: 14px;
+    
+}
+
+
+/* ************************ */
+/* ************************ */
+/* ABOUT ME SECTION*/
+/* ************************* */
+/* ************************* */
+
+/* Tech Details */
+
+.tech-details-cont {
+    margin-top: 48px;
+}
+
+.tech-details-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech-details-title p {
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.tech-details-title i {
+    margin-right: 40px;
+}
+
+.tech-details-title i:hover {
+    cursor: pointer;
+    color: var(--links-color);
+    transition: .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.framework-border {
+    border-bottom: 1px solid var(--post-border);
+}
+
+/* Languages */
+
+.tech-details-languages {
+    padding: 12px;
+}
+
+.tech-lang {
+    display: flex;
+    margin-bottom: 24px;
+    background-color: var(--languages-color);
+    border-radius: 8px;
+    padding: 9px 12px;
+
+}
+
+.tech-lang p {
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    border-radius: 80px 0 0 0;
+    background-color: var(--nav-icon-mobile);
+    min-height: 770px;
+    overflow: hidden;
+    margin-top: 176px;
+}
+
+.contact-img-cont {
+    position: relative;
+}
+
+.bg-img-contact {
+    position: absolute;
+    left: 150px;
+    top: 20px;
+
+}
+
+.contact-me h1 {
+    margin-top: 103px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: #fff;
+}
+
+.contact-me p {
+    margin: 18px 24px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--text-color-2);
+}
+
+/* FORM */
+
+.contact-me-form {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 20px;
+    padding: 25px 24px 0 24px;
+}
+
+.contact-me-form input {
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.contact-me-form button {
+    max-width: max-content;
+    padding: 12px 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: var(--nav-icon-mobile);
+    cursor: pointer;
+    outline: 0;
+    
+}
+
+/* Media Query */
+
+/* Tablet - 720px or more */
+
+@media (min-width: 720px) {
+    .mobile-settings {
+        display: none;
+    }
+}
+
+
+/* Browser - 1020px & beyond */
+
+@media (min-width: 1020px) {
+    body {
+        margin: 0 auto;
+    }
+    .container {
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+            'head-full head-full head-full'
+            '.         post-full .'
+            'about-full about-full about-full'
+            'contact-full contact-full contact-full'
+        ;
+        background-color: #CFD8DC;
+
+    }
+
+    /* @media HEADER */
+    .header-section {
+        grid-area: head-full;
+        background-color: #fff;
+        height: 90vh;
+        grid-column: 1 / -1;
+        overflow:hidden;
+        background-image: url(./img/Header\ bg.svg);
+        background-position: bottom;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
+    
+    }
+
+    /* Navigation Bar - for BROWSER ONLY */
+    /* to make browser nav visible */
+    .nav-bar {
+        margin: 16px 143px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    .nav-full {
+        display: block;
+    }
+    .nav-full nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+
+    }
+    .nav-full nav ul li {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: var(--header-text-color);
+        padding: 10px 12px;
+
+    }
+
+    /* Hiding mobile nav button */
+    .nav-mobile-button {
+        display: none;
+    }
+
+    /* HEADER TEXT AND HEADLINE - 1020 */
+    .headline-header {
+        max-width: none;
+        grid-column: 4 / span 6;
+        grid-row: 3 / span 4;
+    }
+
+    /* ****************** */
+    /* @media POST */
+    /* ****************** */
+
+    .posts-section {
+        grid-area: post-full;
+        grid-column: 2 / span 10;
+        /* background-color: #fff; */
+    }
+    .post {
+        display: grid;
+        border-radius: 16px;
+        border: 1px solid var(--post-border);
+        border: none;
+        padding: 16px;
+        column-gap: 20px;
+        justify-content: center;
+        align-content: center;
+        background-color: #fff;
+        /* max-width: 1156px; */ 
+        margin: 142px auto 142px auto;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    /* removing margin from last post */
+    /* REMOVED - Update */
+
+
+    /* Hiding mobile pic */
+    .post-img-cont {
+        display: none;
+    }
+    /* Original ORder */
+    .post-img-cont-full {
+        display: block;
+        grid-column: auto;
+        order: -1;
+    }
+    .post-1020-img {
+        width: 100%;
+    }
+    /* Original ORder */
+    .post-detail {
+        order: 1;
+    }
+    /* Reverse ORder */
+    .reverse-img {
+        order: 1;
+    }
+    /* Reverse ORder */
+    .reverse-detail {
+        order: -1;
+        margin-left: 48px;
+    }
+
+    .post-detail h2 {
+        font-size: 40px;
+        line-height: 52px;
+        color: var(--highq-h1);
+    }
+    .post-detail-head{
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .post-detail-head aside:not(:first-child) {
+        color: var(--neutral-gray-3);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        text-transform: capitalize;
+    }
+    .post-detail-text {
+        grid-column: 1 / span 3;
+    }
+    .post-detail-text p {
+        font-size: 16px;
+        min-width: 100%;
+    }
+
+    /* @media - POST EXPAND - 1020  */
+
+    .post-expand {
+        width: 80%;
+        /* min-height: 95vh; */
+        background-color: #0135a741;
+        left: 10%;
+    }
+    
+    .post-detail-expand {
+        display: grid;
+        grid-template-rows: auto auto 300px auto;
+        grid-template-areas: 
+            'expand-1020-title expand-1020-title'
+            ' expand-1020-head expand-1020-head'
+            ' expand-1020-img expand-1020-img'
+            ' expand-1020-text expand-1020-btns'
+        ;
+        grid-template-columns: repeat(10, 1fr);
+        background-color: #fff;
+        padding: 16px;
+        height: 100%;
+    }
+
+    .post-expand-detail-title {
+        grid-area: expand-1020-title;
+        grid-column: 1 / -1;
+    }
+    .post-detail-head-expand {
+        grid-area: expand-1020-head ;
+        grid-column: 1/ -1;
+    }
+    .post-img-cont-full-expand {
+        grid-area: expand-1020-img ;
+        grid-column: 1/ -1;
+    }
+    .post-img-cont-full-expandEl {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .post-detail-text-expand-1020 {
+        grid-area: expand-1020-text;
+        grid-column: 1/span 7;
+        display: flex;
+    }
+    .post-detail-text-expand-1020 p {
+        line-height: 30px;
+        font-weight: 400;
+    }
+    .post-btn-expand {
+        grid-area: expand-1020-btns;
+        grid-column: 8 / -1
+    }
+
+    .post-detail-text-expand {
+        display: none;
+    }
+    
+    /* @media ABOUTME - 1020 */
+    /* Because of "Headline-header" class name used and applied in two seperate sections and my laziness to change names, Im using sime flex property to align this section */
+    .aboutme-section {
+        grid-area: about-full;
+        background-color: #fff;
+        /* height: 60vh; */
+        grid-column: 1/-1;
+        display: flex;
+        gap: 24px;
+        padding: 142px 142px 166px 142px;
+    }
+    .aboutme-header {
+        flex: 1;
+
+    }
+    .tech-details-cont {
+        flex: 2;
+    
+    }
+
+    .aboutme-header p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+    .aboutme-header a {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    /* Post Btn - 1020*/
+    .post-btnEl {
+        font-size: 17px;
+        letter-spacing: 3%;
+        line-height: 24px;
+        font-weight: 500;
+        font-family: inherit;
+    }
+
+    /* Languages */
+    .tech-details-languages {
+        display: flex;
+    }
+
+    .tech-lang {
+        display: block;
+        /* padding: 12px 12px 20px 12px; */
+        width: 122px;
+        height: 120px;
+        margin-right: 12px;
+    }
+    
+    .tech-lang p {
+        margin: 0;
+    }
+
+
+
+    /* @media CONTACT - 1020 */
+    /* Using grid area for template  */
+    .contact-section {
+        grid-area: contact-full;
+        grid-column: 1/-1;
+        margin-top: 0;
+        display: grid;
+    }
+    /* assigning grid to section and setting standard columns with 3 rows  */
+    .contact-me {
+        text-align: center;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        grid-template-columns: repeat(12, 1fr);
+        background-image: url(./img/contact\ form-\ background-shape-desktop.svg);
+        background-size: cover;
+
+    }
+
+    /* Custom placing each row with grid-colums (NOT RECOMMENDED) - Easy way is margin: 0 auto with max-width: 660px for all 3 rows. Works the same */
+
+
+    .contact-me h1 {
+        grid-column: 5 / span 4;
+    }
+   
+    .contact-me p {
+        grid-column: 4 / span 6;
+        grid-row: 2;
+    }
+    .contact-me-form {
+        grid-row: 3;
+        grid-column: 5 / span 4;
+
+    }
+
+    /* Moving button with margin cuz grid-colums was giving weird result and i opted easy way out */
+
+    .contact-me-form button {
+        margin: 0 auto 139px auto;
+    }
+
+    
+    
+    
+}
